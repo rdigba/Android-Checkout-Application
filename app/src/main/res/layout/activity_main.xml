@@ -6,6 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/drinkPriceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/drink_price"
+        app:layout_constraintBottom_toTopOf="@+id/drinkImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/friesPriceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/fries_price"
+        app:layout_constraintBottom_toTopOf="@+id/friesImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
         android:id="@+id/removeDrinkButton"
         android:layout_width="28dp"
@@ -125,7 +147,7 @@
         app:layout_constraintTop_toBottomOf="@+id/addBurgerButton" />
 
     <TextView
-        android:id="@+id/totalText"
+        android:id="@+id/totalTextView"
         android:layout_width="96dp"
         android:layout_height="41dp"
         android:layout_marginEnd="40dp"
@@ -146,7 +168,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.903"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/totalText" />
+        app:layout_constraintTop_toBottomOf="@+id/totalTextView" />
 
     <TextView
         android:id="@+id/burgerCountTextView"
@@ -180,5 +202,16 @@
         app:layout_constraintHorizontal_bias="0.27"
         app:layout_constraintStart_toEndOf="@+id/drinkImageView"
         app:layout_constraintTop_toBottomOf="@+id/friesCountTextView" />
+
+    <TextView
+        android:id="@+id/burgerPriceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/burger_price"
+        app:layout_constraintBottom_toTopOf="@+id/burgerImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
