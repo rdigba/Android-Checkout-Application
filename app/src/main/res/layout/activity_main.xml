@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/removeFries2"
+        android:id="@+id/removeDrinkButton"
         android:layout_width="28dp"
         android:layout_height="28dp"
         android:layout_marginStart="29dp"
@@ -17,11 +17,11 @@
         android:text="@string/minus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/addDrink" />
+        app:layout_constraintStart_toEndOf="@+id/drinkImageView"
+        app:layout_constraintTop_toBottomOf="@+id/addDrinkButton" />
 
     <Button
-        android:id="@+id/addDrink"
+        android:id="@+id/addDrinkButton"
         android:layout_width="28dp"
         android:layout_height="28dp"
         android:layout_marginStart="29dp"
@@ -31,11 +31,11 @@
         android:text="@string/plus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/drinkImageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/removeFries"
+        android:id="@+id/removeFriesButton"
         android:layout_width="28dp"
         android:layout_height="28dp"
         android:layout_marginStart="26dp"
@@ -45,11 +45,11 @@
         android:text="@string/minus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/addFries" />
+        app:layout_constraintStart_toEndOf="@+id/friesImageView"
+        app:layout_constraintTop_toBottomOf="@+id/addFriesButton" />
 
     <Button
-        android:id="@+id/addFries"
+        android:id="@+id/addFriesButton"
         android:layout_width="28dp"
         android:layout_height="28dp"
         android:layout_marginStart="24dp"
@@ -59,11 +59,11 @@
         android:text="@string/plus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.008"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/friesImageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/burgerImageView"
         android:layout_width="103dp"
         android:layout_height="106dp"
         android:layout_marginTop="88dp"
@@ -75,7 +75,7 @@
         app:srcCompat="@drawable/burger" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/friesImageView"
         android:layout_width="103dp"
         android:layout_height="120dp"
         android:layout_marginTop="76dp"
@@ -83,11 +83,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.084"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/burgerImageView"
         app:srcCompat="@drawable/fries" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/drinkImageView"
         android:layout_width="100dp"
         android:layout_height="157dp"
         android:layout_marginTop="68dp"
@@ -95,11 +95,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/friesImageView"
         app:srcCompat="@drawable/drink" />
 
     <Button
-        android:id="@+id/addBurger"
+        android:id="@+id/addBurgerButton"
         android:layout_width="28dp"
         android:layout_height="28dp"
         android:layout_marginTop="96dp"
@@ -109,11 +109,11 @@
         android:text="@string/plus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/burgerImageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/removeBurger"
+        android:id="@+id/removeBurgerButton"
         android:layout_width="28dp"
         android:layout_height="28dp"
         android:layout_marginTop="32dp"
@@ -121,7 +121,64 @@
         android:text="@string/minus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.102"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/addBurger" />
+        app:layout_constraintStart_toEndOf="@+id/burgerImageView"
+        app:layout_constraintTop_toBottomOf="@+id/addBurgerButton" />
+
+    <TextView
+        android:id="@+id/totalText"
+        android:layout_width="96dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:text="@string/empty_cart"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.585" />
+
+    <Button
+        android:id="@+id/checkoutButton"
+        android:layout_width="120dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/checkout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.903"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalText" />
+
+    <TextView
+        android:id="@+id/burgerCountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="124dp"
+        android:text="@string/default_burger_num"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.262"
+        app:layout_constraintStart_toEndOf="@+id/burgerImageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/friesCountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="172dp"
+        android:text="@string/default_fries_num"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.262"
+        app:layout_constraintStart_toEndOf="@+id/friesImageView"
+        app:layout_constraintTop_toBottomOf="@+id/burgerCountTextView" />
+
+    <TextView
+        android:id="@+id/drinkCountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="184dp"
+        android:text="@string/default_drink_num"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.27"
+        app:layout_constraintStart_toEndOf="@+id/drinkImageView"
+        app:layout_constraintTop_toBottomOf="@+id/friesCountTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
