@@ -3,4 +3,6 @@
     <string name="burger_image">Stock Burger</string>
     <string name="fries_image">Stock Fries</string>
     <string name="drink_image">Stock Drink</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
 </resources>
