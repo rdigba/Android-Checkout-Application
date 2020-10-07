@@ -5,7 +5,7 @@
     <string name="drink_image">Stock Drink</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
-    <string name="empty_cart">0.00</string>
+    <string name="empty_cart">$0</string>
     <string name="default_burger_num">0</string>
     <string name="default_fries_num">0</string>
     <string name="default_drink_num">0</string>
@@ -13,4 +13,6 @@
     <string name="burger_price">$3</string>
     <string name="fries_price">$2</string>
     <string name="drink_price">$1</string>
+    <string name="clear">clear</string>
+    <string name="order_history">Order History</string>
 </resources>

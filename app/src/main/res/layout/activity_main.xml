@@ -6,6 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/orderHistoryButton"
+        android:layout_width="120dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/order_history"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.903"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clearButton" />
+
+    <Button
+        android:id="@+id/clearButton"
+        android:layout_width="120dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/clear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.903"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkoutButton" />
+
     <TextView
         android:id="@+id/drinkPriceTextView"
         android:layout_width="wrap_content"

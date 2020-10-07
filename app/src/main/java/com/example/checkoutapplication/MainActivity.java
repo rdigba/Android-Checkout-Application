@@ -3,10 +3,12 @@ package com.example.checkoutapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         addDrink();
         removeDrink();
         checkout();
+        clear();
+        orderHistroy();
     }
 
     // Function to add burger to cart when + button is pressed
@@ -170,6 +174,50 @@ public class MainActivity extends AppCompatActivity {
                 int total = (numBurgers * burgerPrice) + (numFries * friesPrice) +
                         (numDrinks * drinkPrice);
                 totalText.setText("$" + total);
+                if (total > 0)
+                    toastMessage("Order Made!");
+                else
+                    toastMessage("Add something to your cart to checkout");
+            }
+        });
+    }
+
+    // Function to reset everything and if an order was made to log it into order history
+    private void clear() {
+        // Get button
+        Button clearButton = findViewById(R.id.clearButton);
+        // Clear everything if clicked
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onClick(View view) {
+                // Show user total
+                numBurgersText = findViewById(R.id.burgerCountTextView);
+                numFriesText = findViewById(R.id.friesCountTextView);
+                numDrinksText = findViewById(R.id.drinkCountTextView);
+                totalText = findViewById(R.id.totalTextView);
+                totalText.setText("$0");
+                numBurgersText.setText("0");
+                numFriesText.setText("0");
+                numDrinksText.setText("0");
+            }
+        });
+    }
+
+    // Show message to user
+    private void toastMessage(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    // Go to next activity if user clikcs order history
+    private void orderHistroy() {
+        Button orderHistoryButton = findViewById(R.id.orderHistoryButton);
+        orderHistoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,
+                        OrderHistoryActivity.class);
+                startActivity(intent);
             }
         });
     }
