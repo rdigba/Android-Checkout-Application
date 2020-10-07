@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     int friesPrice = 2;
     int drinkPrice = 1;
 
+    DatabaseHelper mDatabaseHelper = new DatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -174,8 +176,10 @@ public class MainActivity extends AppCompatActivity {
                 int total = (numBurgers * burgerPrice) + (numFries * friesPrice) +
                         (numDrinks * drinkPrice);
                 totalText.setText("$" + total);
-                if (total > 0)
+                if (total > 0) {
                     toastMessage("Order Made!");
+                    AddData(totalText.getText().toString());
+                }
                 else
                     toastMessage("Add something to your cart to checkout");
             }
@@ -220,5 +224,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    public void AddData(String newEntry) {
+        boolean insertData = mDatabaseHelper.addData(newEntry);
+
+        if (insertData) {
+            toastMessage("Data Successfully Inserted!");
+        } else {
+            toastMessage("Something went wrong");
+        }
     }
 }
