@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     int burgerPrice = 3;
     int friesPrice = 2;
     int drinkPrice = 1;
+    // Variable for tax so we can change later if we want
+    double tax = 1.13;
 
     DatabaseHelper mDatabaseHelper = new DatabaseHelper(this);
 
@@ -173,8 +175,11 @@ public class MainActivity extends AppCompatActivity {
                 int numBurgers = Integer.parseInt(numBurgersText.getText().toString());
                 int numFries = Integer.parseInt(numFriesText.getText().toString());
                 int numDrinks = Integer.parseInt(numDrinksText.getText().toString());
-                int total = (numBurgers * burgerPrice) + (numFries * friesPrice) +
-                        (numDrinks * drinkPrice);
+                int burgerPrice, friesPrice, drinkPrice;
+                burgerPrice = calcBurgerPrice(numBurgers);
+                friesPrice = calcFriesPrice(numFries);
+                drinkPrice = calcDrinkPrice(numDrinks);
+                double total = applyTax(burgerPrice + friesPrice + drinkPrice);
                 totalText.setText("$" + total);
                 if (total > 0) {
                     toastMessage("Order Made!");
@@ -226,6 +231,27 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // Calculation function for burger price
+    protected int calcBurgerPrice(int quantity) {
+        return quantity * burgerPrice;
+    }
+
+    // Calculation function for fries price
+    protected int calcFriesPrice(int quantity) {
+        return quantity * friesPrice;
+    }
+
+    // Calculation function for drink price
+    protected int calcDrinkPrice(int quantity) {
+        return quantity * drinkPrice;
+    }
+
+    // Calculating Tax for total
+    protected double applyTax(int amount) {
+        return Math.round(amount * tax * 100.0) / 100.0;
+    }
+
+    // AddData to SQLite database
     public void AddData(String newEntry) {
         boolean insertData = mDatabaseHelper.addData(newEntry);
 
